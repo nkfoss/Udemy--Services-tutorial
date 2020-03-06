@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
+import { LoggingService } from './logging.service'
 
+// This tells Angular that we can inject other services into here
 @Injectable({
   providedIn: 'root'
 })
@@ -28,5 +30,5 @@ export class AccountsService {
     this.accounts[id].status=status;
   }
 
-  constructor() { }
+  constructor(private loggingService: LoggingService) { }
 }
